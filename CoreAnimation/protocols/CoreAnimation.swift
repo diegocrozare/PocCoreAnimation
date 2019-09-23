@@ -6,11 +6,10 @@
 //  Copyright © 2019 Diego Crozare. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol Animations {
-    // balançar componente
+    // Balançar componente
     func shake()
 }
 
@@ -18,7 +17,7 @@ protocol Animations {
 
 extension Animations where Self: UIView {
     
-    ///tremer elemento
+    /// Tremer elemento
     func shake() {
         let animation = CABasicAnimation(keyPath: "position.x")
         animation.duration = 0.2
@@ -30,7 +29,7 @@ extension Animations where Self: UIView {
         self.layer.add(animation, forKey: "basicAnimation")
     }
     
-    ///rotacionar elemento em 360 graus
+    /// Rotacionar elemento em 360 graus
     func rotate360Degrees(duration: CFTimeInterval = 1.0, completionDelegate: AnyObject? = nil) {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
@@ -43,7 +42,7 @@ extension Animations where Self: UIView {
         self.layer.add(rotateAnimation, forKey: nil)
     }
     
-    /// Dar opacidade no elemento
+    /// Opacidade no elemento
     func opacityElement() {
         
         let animation = CABasicAnimation(keyPath: "opacity")
@@ -58,7 +57,7 @@ extension Animations where Self: UIView {
         self.layer.add(animation, forKey: "opacity")
     }
     
-    ///escalar o componente
+    /// Escalar o componente
     func scaleElement() {
         
         let animation = CABasicAnimation(keyPath: "transform.scale")
@@ -69,19 +68,19 @@ extension Animations where Self: UIView {
         self.layer.add(animation, forKey: "transform.scale")
     }
     
-    /// transição de tela do tipo de mudança de background
+    /// Transição de tela do tipo de mudança de background
     func runTransition() {
         let transition = CATransition()
         transition.duration = 2
         
-        //existem alguns tipos de de types para usar na transição (fade - moveIn - push - reveal)
+        // Existem alguns tipos de de types para usar na transição (fade - moveIn - push - reveal)
         transition.type = CATransitionType.fade
         self.backgroundColor = UIColor.blue
         
         self.layer.add(transition, forKey: "transition")
     }
     
-    ///agrupamentos de animations - exemplo de pulsar
+    /// Agrupamentos de animations - exemplo de pulsar
     func groupAnimation() {
         let animationTransform = CABasicAnimation(keyPath: "transform.scale")
         animationTransform.fromValue = 1
@@ -100,7 +99,7 @@ extension Animations where Self: UIView {
         self.layer.add(animationGroup, forKey: "animationGroup")
     }
     
-    ///descolocamento do componente na tela
+    /// Descolocamento do componente na tela
     func position() {
         
         let animation = CABasicAnimation(keyPath: "position")
@@ -111,7 +110,7 @@ extension Animations where Self: UIView {
         self.layer.add(animation, forKey: "position")
     }
     
-    ///alteracao da cor do background por meio dos frames
+    /// Alteracao da cor do background por meio dos frames
     func backgroundElement() {
             let colorKeyframeAnimation = CAKeyframeAnimation(keyPath: "backgroundColor")
         

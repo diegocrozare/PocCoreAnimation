@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func opacityButton(_ sender: Any) {
-        //view2.opacityElement()
         view1.groupAnimation()
     }
     
